@@ -4,12 +4,12 @@ namespace Seed\Resources;
 
 class Index {
     
-    private $Twig;
+    private $view;
     private $Cake;
     
     public function __construct($plugins) {
         
-        $this->Twig = $plugins->Twig;
+        $this->view = $plugins->Twig;
         $this->Cake = new \Seed\Models\Cake;
     }
     
@@ -23,8 +23,9 @@ class Index {
         $this->Cake->eatSlice();
         $this->Cake->eatSlice();
         
-        $template = $this->Twig->loadTemplate('index.html');
-        $template->display(array('start' => $startingNumOfSlices,
-                                 'current' => $this->Cake->numOfSlices()));
+        return $this->view->render('index.html', array(
+                                'start' => $startingNumOfSlices,
+                                'current' => $this->Cake->numOfSlices(),
+                            ));
     }
 }
