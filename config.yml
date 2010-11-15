@@ -1,0 +1,8 @@
+#Disable debug in production
+debug: true
+
+#Database settings
+database: mysql://root:@localhost/hummingbird
+
+plugins:
+    Test

@@ -1,0 +1,7 @@
+/: Index
+/{slices}/: Index
+/about/: About
+
+/users/:
+    /: Users
+    /{id}/: User

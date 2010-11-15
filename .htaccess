@@ -1,0 +1,25 @@
+Options +FollowSymLinks +MultiViews -Indexes
+
+<IfModule mod_dir.c>
+  DirectorySlash Off
+</IfModule>
+
+#ErrorDocument 400 /index.php?error=400
+#ErrorDocument 403 /index.php?error=403
+#ErrorDocument 404 /index.php?error=404
+#ErrorDocument 500 /index.php?error=500
+
+<IfModule mod_rewrite.c>
+
+  RewriteEngine on
+  RewriteBase /
+  
+  #Add trailing slashes
+  RewriteCond %{REQUEST_URI} !(.*)/$
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^(.*)$ $1/ [R=301,L]
+  
+  # Route all URLs to index.php.
+  RewriteRule ^(.*)$ index.php [L]
+
+</IfModule>
