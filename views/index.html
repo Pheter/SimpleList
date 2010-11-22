@@ -1,2 +1,6 @@
-<p>I have a cake with <strong>{{ start }}</strong> slices.</p>
-<p>After eating 2 of the slices, there are <strong>{{ current }}</strong> slices left!</p>
+<p>Let's create a cake!</p>
+<form action="/" method="POST">
+    <label for="slices">How many slices should the cake have?</label>
+    <input type="text" name="slices" value="2" style="width: 30px;" />
+    <input type="submit" value="Bake!" />
+</form>

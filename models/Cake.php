@@ -4,11 +4,18 @@ namespace Seed\Models;
 
 class Cake {
     
+    private $ADOdb;
     private $slices = null;
+    
+    public function __construct($ADOdb) {
+        
+        $this->ADOdb = $ADOdb;
+    }
+    
     
     public function slice($slices) {
         
-        $this->slices = $slices;
+        $this->ADOdb->Execute("INSERT INTO cakes(slices) VALUES($slices)");
     }
     
     
@@ -18,8 +25,9 @@ class Cake {
     }
     
     
-    public function numOfSlices() {
+    public function numOfSlices($id) {
         
-        return $this->slices;
+        $row = ($this->ADOdb->Execute("SELECT slices FROM cakes WHERE id = $id")->FetchRow());
+        return $row['slices'];
     }
 }

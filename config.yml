@@ -1,8 +1,9 @@
 #Disable debug in production
 debug: true
 
-#Database settings
-database: mysql://root:@localhost/hummingbird
+database:
+    dsn: mysql://root:@localhost/seed
 
 plugins:
     Twig
+    ADOdb
