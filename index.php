@@ -1,4 +1,5 @@
 <?php
 
 ini_set('include_path', '../seed');
-require('init.php');
+require('Framework.php');
+new \Seed\Framework;
