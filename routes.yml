@@ -1,7 +1,6 @@
-/: Index
-/{id}/: Index
-/about/: About
+'/': Index
+'/{id:\d+}/': Todo
 
-/users/:
-    /: Users
-    /{id}/: User
+'/users/':
+    '/': Users
+    '/{id}/': User

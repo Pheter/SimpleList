@@ -2,7 +2,7 @@
 
 namespace Seed\Resources;
 
-class Index {
+class Todo {
     
     public function __construct($plugins, $data) {
         
@@ -12,15 +12,9 @@ class Index {
     }
     
     
-    public function get() {
+    public function delete($id) {
         
-        return $this->twig->render('index.html', array('items' => $this->simpleList->get()));
-    }
-    
-    
-    public function post() {
-        
-        $this->simpleList->add($this->data['item']);
+        $this->simpleList->delete($id);
         
         return $this->twig->render('index.html', array('items' => $this->simpleList->get()));
     }
