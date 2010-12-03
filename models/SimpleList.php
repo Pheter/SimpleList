@@ -1,8 +1,6 @@
 <?php
 
-namespace Seed\Models;
-
-class SimpleList {
+class Models_SimpleList {
     
     private $ADOdb;
     

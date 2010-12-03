@@ -1,13 +1,11 @@
 <?php
 
-namespace Seed\Resources;
-
-class Todo {
+class Resources_Todo {
     
     public function __construct($plugins, $data) {
         
         $this->twig = $plugins->Twig;
-        $this->simpleList = new \Seed\Models\SimpleList($plugins->ADOdb);
+        $this->simpleList = new Models_SimpleList($plugins->ADOdb);
         $this->data = $data;
     }
     
